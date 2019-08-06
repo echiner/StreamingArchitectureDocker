@@ -36,8 +36,8 @@ The list of components and it Docker name is the following:
 
 ## Reference
 
-**Reference**: https://hub.docker.com/r/apache/nifi/
-**Reference**: https://hub.docker.com/r/bitnami/kafka/
+* Apache NiFi Docker Image: https://hub.docker.com/r/apache/nifi/
+* Apache Kafka Docker Image:: https://hub.docker.com/r/bitnami/kafka/
 
 ## Maintenance
 
@@ -56,4 +56,4 @@ VBoxManage modifyvm default --memory 4096
 docker-machine start
 ```
 
-More info: https://stackoverflow.com/questions/32834082/how-to-increase-docker-machine-memory-mac 
+More info: https://stackoverflow.com/questions/32834082/how-to-increase-docker-machine-memory-mac
