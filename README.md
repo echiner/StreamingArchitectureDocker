@@ -4,28 +4,56 @@ End-to-end streaming architecture (from ingestion to analytics), based on Docker
 
 ![Architecture](img/architecture.png)
 
-## Ingestion: Apache NiFi
+## Setup
 
-* Run the NiFi docker container:
+### Pre-requisites
 
-```
-docker run --name nifi -p 8080:8080 -d apache/nifi:latest
-```
+* Download & install Docker: https://docs.docker.com/install/
 
-* Go to the following URL: http://192.168.99.100:8080/nifi/
+### Launch the architecture
 
-**Reference**: https://hub.docker.com/r/apache/nifi/
-
-## Messaging: Apache Kafka
-
-* Go to the kafka folder:
+* Go to the main Docker Compose folder:
 
 ```
-cd src/kafka
+cd src/main
 ```
 
-* Run the Docker compose (will launch Zookeeper and a Kafka broker):
+* Run the Docker compose:
 
 ```
 docker-compose up -d
 ```
+
+## Component list
+
+The list of components and it Docker name is the following:
+
+| Service | Hostname | Port | URL (when applies) |
+| --- | --- | --- | --- |
+| Apache NiFi | nifi | 8080 | http://192.168.99.100:8080/nifi/ |
+| Apache Kafka (broker) | kakfa | 9092 | .. |
+| Apache Kafka (zookeeper) | zookeeper | 2181 | .. |
+
+## Reference
+
+**Reference**: https://hub.docker.com/r/apache/nifi/
+**Reference**: https://hub.docker.com/r/bitnami/kafka/
+
+## Maintenance
+
+Starting and stopping things.
+
+## Troubleshooting
+
+### Adding more memory for the containers
+
+* Using the Docker configuration (when native)
+* Manually, using command line
+```
+docker-machine stop
+VBoxManage modifyvm default --cpus 2
+VBoxManage modifyvm default --memory 4096
+docker-machine start
+```
+
+More info: https://stackoverflow.com/questions/32834082/how-to-increase-docker-machine-memory-mac 
