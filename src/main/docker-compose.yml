@@ -38,6 +38,23 @@ services:
     environment:
       - ZK_HOSTS=zookeeper:2181
       - APPLICATION_SECRET=letmein
+  elasticsearch:
+    image: 'elasticsearch:7.3.0'
+    hostname: elasticsearch
+    ports:
+      - '9200:9200'
+      - '9300:9300'
+    environment:
+      - discovery.type=single-node
+  kibana:
+    image: 'kibana:7.3.0'
+    hostname: kibana
+    ports:
+      - '5601:5601'
+    environment:
+      - elasticsearch.hosts=http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
 
 volumes:
   zookeeper_data:

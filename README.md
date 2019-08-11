@@ -33,11 +33,17 @@ The list of components and it Docker name is the following:
 | Apache NiFi | nifi | 8080 | http://192.168.99.100:8080/nifi/ |
 | Apache Kafka (broker) | kakfa | 9092 | .. |
 | Apache Kafka (zookeeper) | zookeeper | 2181 | .. |
+| Kafka Manager | kafka-manager | 9000 | http://192.168.99.100:9000 |
+| Elasticsearch | elasticsearch | 9200 | http://192.168.99.100:9200 |
+| Kibana | kibana | 5601 | http://192.168.99.100:5601 |
 
 ## Reference
 
 * Apache NiFi Docker Image: https://hub.docker.com/r/apache/nifi/
 * Apache Kafka Docker Image:: https://hub.docker.com/r/bitnami/kafka/
+* Kafka Manage Docker Image: https://hub.docker.com/r/sheepkiller/kafka-manager
+* Elasticsearch Docker Image: https://hub.docker.com/_/elasticsearch
+* Kibana Docker Image: https://hub.docker.com/_/kibana
 
 ## Maintenance
 
