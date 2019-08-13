@@ -55,6 +55,11 @@ services:
       - elasticsearch.hosts=http://elasticsearch:9200
     depends_on:
       - elasticsearch
+  jupyter:
+    image: 'jupyter/datascience-notebook:latest'
+    hostname: jupyter
+    ports:
+      - '8888:8888'
 
 volumes:
   zookeeper_data:

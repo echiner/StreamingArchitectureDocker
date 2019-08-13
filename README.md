@@ -28,14 +28,15 @@ docker-compose up -d
 
 The list of components and it Docker name is the following:
 
-| Service | Hostname | Port | URL (when applies) |
+| Service | Service/Hostname | Port | URL (when applies) |
 | --- | --- | --- | --- |
-| Apache NiFi | nifi | 8080 | http://192.168.99.100:8080/nifi/ |
-| Apache Kafka (broker) | kakfa | 9092 | .. |
-| Apache Kafka (zookeeper) | zookeeper | 2181 | .. |
-| Kafka Manager | kafka-manager | 9000 | http://192.168.99.100:9000 |
-| Elasticsearch | elasticsearch | 9200 | http://192.168.99.100:9200 |
-| Kibana | kibana | 5601 | http://192.168.99.100:5601 |
+| **Apache NiFi** | nifi | 8080 | http://192.168.99.100:8080/nifi/ |
+| **Apache Kafka (broker)** | kakfa | 9092 | .. |
+| **Apache Kafka (zookeeper)** | zookeeper | 2181 | .. |
+| **Kafka Manager** | kafka-manager | 9000 | http://192.168.99.100:9000 |
+| **Elasticsearch** | elasticsearch | 9200 | http://192.168.99.100:9200 |
+| **Kibana** | kibana | 5601 | http://192.168.99.100:5601 |
+| **Jupyter** | jupyter | 8888 | http://192.168.99.100:8888 |
 
 ## Reference
 
@@ -44,10 +45,41 @@ The list of components and it Docker name is the following:
 * Kafka Manage Docker Image: https://hub.docker.com/r/sheepkiller/kafka-manager
 * Elasticsearch Docker Image: https://hub.docker.com/_/elasticsearch
 * Kibana Docker Image: https://hub.docker.com/_/kibana
+* Jupyter Docker Image: https://hub.docker.com/r/jupyter/datascience-notebook
 
 ## Maintenance
 
-Starting and stopping things.
+### Starting and stopping things
+
+In order to stop/start single service, use the following commands:
+
+```
+docker-compose start <Service>
+```
+
+Where the **<Service>** is listed in the table above ("Component list" section).
+
+### Reading the logs
+
+List the running containers first:
+
+```
+docker ps
+```
+
+Then use the following command to
+
+```
+docker logs <CONTAINER ID or NAME>
+```
+
+### Destroy everything
+
+Use the following command to stop all services and remove the containers:
+
+```
+docker-compose down
+```
 
 ## Troubleshooting
 
