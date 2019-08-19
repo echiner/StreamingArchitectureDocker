@@ -28,15 +28,16 @@ docker-compose up -d
 
 The list of components and it Docker name is the following:
 
-| Service | Service/Hostname | Port | URL (when applies) |
-| --- | --- | --- | --- |
-| **Apache NiFi** | nifi | 8080 | http://192.168.99.100:8080/nifi/ |
-| **Apache Kafka (broker)** | kakfa | 9092 | .. |
-| **Apache Kafka (zookeeper)** | zookeeper | 2181 | .. |
-| **Kafka Manager** | kafka-manager | 9000 | http://192.168.99.100:9000 |
-| **Elasticsearch** | elasticsearch | 9200 | http://192.168.99.100:9200 |
-| **Kibana** | kibana | 5601 | http://192.168.99.100:5601 |
-| **Jupyter** | jupyter | 8888 | http://192.168.99.100:8888 |
+| Service | Description | Service/Hostname | Port | URL (when applies) |
+| --- | --- | --- | --- | --- |
+| **Apache NiFi** | Data ingestion tool | nifi | 8090 | http://192.168.99.100:8090/nifi/ |
+| **Apache Kafka (broker)** | Distributed message broker | kakfa | 9092 | .. |
+| **Apache Kafka (zookeeper)** | Configuration Manager | zookeeper | 2181 | .. |
+| **Kafka Manager** | Tool for managing Kafka (clusters, topics,  etc.) | kafka-manager | 9000 | http://192.168.99.100:9000 |
+| **Elasticsearch** | Document storage and indexing/search tool | elasticsearch | 9200 | http://192.168.99.100:9200 |
+| **Kibana** | Data visualization tool for Elastic | kibana | 5601 | http://192.168.99.100:5601 |
+| **Jupyter** | Data analytics notebooks | jupyter | 8888 | http://192.168.99.100:8888 |
+| **cAdvisor** | Docker monitoring tool | monitor | 8080 | http://192.168.99.100:8080 |
 
 ## Reference
 
@@ -46,6 +47,9 @@ The list of components and it Docker name is the following:
 * Elasticsearch Docker Image: https://hub.docker.com/_/elasticsearch
 * Kibana Docker Image: https://hub.docker.com/_/kibana
 * Jupyter Docker Image: https://hub.docker.com/r/jupyter/datascience-notebook
+* **cAdvisor**
+  * Docker Image: https://hub.docker.com/r/google/cadvisor/
+  * Documentation: https://github.com/google/cadvisor
 
 ## Maintenance
 

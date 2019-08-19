@@ -5,7 +5,9 @@ services:
     image: 'apache/nifi:latest'
     hostname: nifi
     ports:
-      - '8080:8080'
+      - '8090:8090'
+    environment:
+      - NIFI_WEB_HTTP_PORT=8090
   zookeeper:
     image: 'bitnami/zookeeper:latest'
     hostname: zookeeper
@@ -60,6 +62,17 @@ services:
     hostname: jupyter
     ports:
       - '8888:8888'
+  monitor:
+    image: 'google/cadvisor:latest'
+    hostname: monitor
+    ports:
+      - '8080:8080'
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
 
 volumes:
   zookeeper_data:
